@@ -18,8 +18,7 @@ public class AvgCalculator {
 	private static void getBatterInfo(Scanner sc, NumberFormat num) {
 		String choice;
 		int atBat;
-		double bases;
-		double bats;
+		double bases, bats;
 		System.out.println("Welcome to the Batting Average Calculator: ");
 		do {
 			bases = 0;
@@ -33,20 +32,18 @@ public class AvgCalculator {
 					bats++;
 				}
 			}
-			displayStats(num, atBat, bases, bats);
+			displayStats(num, atBat, bases, bats);		
 			choice = Validator.getChoice(sc, "Another batter: (y/n):", "y","n");
 		} while (choice.equalsIgnoreCase("y"));
 	}
 
 	private static void displayStats(NumberFormat num, int atBat, double bases,
 			double bats) {
-		double battingAvg;
-		double slugPercentage;
-		battingAvg = bats / atBat;
-		slugPercentage = bases / atBat;
+		double battingAvg = bats / atBat;
+		double slugPercentage = bases / atBat;
 		System.out.println("Batting Average: " + num.format(battingAvg));
 		System.out
-				.println("Slugging Percentage: " + num.format(slugPercentage));		
-	}
+				.println("Slugging Percentage: " + num.format(slugPercentage));
+	}	
 
 }
